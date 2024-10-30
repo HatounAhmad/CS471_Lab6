@@ -57,7 +57,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, "apps" + os.sep + "templates")
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR],  # Specify the template directory
+        'DIRS': [os.path.join(BASE_DIR, "apps/templates")], # Specify the template directory
         'APP_DIRS': True,        # Keep this True so Django can find templates in apps
         'OPTIONS': {
             'context_processors': [

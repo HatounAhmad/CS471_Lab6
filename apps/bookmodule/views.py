@@ -1,9 +1,6 @@
 from django.shortcuts import render  # Add this import
 from django.http import HttpResponse
 
-def index(request):
-    name = request.GET.get("name", "world!")
-    return HttpResponse(f"Hello, {name}")
 
 def index2(request, val1=0):
     return HttpResponse(f"value1 = {val1}")
@@ -20,3 +17,26 @@ def viewbook(request, bookId):
     context = {'book': targetBook}
     return render(request, 'bookmodule/show.html', context)
 
+def index(request):
+    return render(request, "bookmodule/index.html")
+
+def aboutus(request):
+    return render(request, "bookmodule/aboutus.html")
+
+def list_books(request):
+    return render(request, "bookmodule/list_books.html")
+
+def viewbook(request, bookId):
+    return render(request, "bookmodule/one_book.html")
+
+def links(request):
+    return render(request, "bookmodule/links.html")
+
+def formatting(request):
+    return render(request, "bookmodule/formatting.html")
+
+def listing(request):
+    return render(request, "bookmodule/listing.html")
+
+def tables(request):
+    return render(request, "bookmodule/tables.html")
